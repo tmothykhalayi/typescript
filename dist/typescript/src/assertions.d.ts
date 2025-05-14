@@ -1,0 +1,14 @@
+type One = string;
+type Two = string | number;
+type Three = 'hello';
+declare let a: One;
+declare let b: Two;
+declare let c: Three;
+declare let d: One;
+declare let e: string | number;
+declare const addOrConcat: (a: number, b: number, c: "add" | "concat") => number | string;
+declare let myVal: string;
+declare let nextVal: number;
+declare const img: HTMLImageElement;
+declare const myImg: HTMLImageElement;
+declare const nextImg: HTMLImageElement;

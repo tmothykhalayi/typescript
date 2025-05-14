@@ -1,0 +1,11 @@
+declare let a: string;
+declare let b: string;
+declare let c: string;
+declare let d: string;
+declare let e: string;
+declare function addOrConcat(a: any, b: any, c: any): any;
+declare let myVal: any;
+declare let nextVal: any;
+declare const img: HTMLImageElement | null;
+declare const myImg: HTMLElement | null;
+declare const nextImg: HTMLElement | null;
