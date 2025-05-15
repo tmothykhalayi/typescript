@@ -1,68 +1,55 @@
-// Simulated asynchronous function using a Promise
-// function fetchData(): Promise<string> {
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             const success = true; // Toggle to simulate success or failure
-//             if (success) {
-//                 resolve("Data fetched successfully!");
-//             } else {
-//                 reject("Failed to fetch data.");
-//             }
-//         }, 2000); // Simulates 2-second delay
-//     });
+// //Operators and controlflows
+// interface Human {
+//     eyes:number
 // }
-
-// // Async function to display data using fetchData
-// async function displayData(): Promise<void> {
-//     try {
-//         console.log("Fetching data...");
-//         const data = await fetchData();
-//         console.log(data);
-//     } catch (error) {
-//         console.error("Error:", error);
-//     }
+// interface Person extends Human {
+//     name:string ,
+//     age:number ,
+//     Adress:{
+//         city:string,
+//         country:string ,
+//         street:number,
+//         zip:number
+//     },
+//     hobbies:string[]
 // }
+// const john :Person = {
+//     name:'John',
+//     age:30,
+//     Adress:{
+//         city:'kutus',
+//         country:'kerugoya',
+//         street:65,
+//         zip:50109
+//     },
+//     hobbies:['reading','gaming'],
+//     eyes:2
+// }
+// console.log(john.hobbies);
+// console.log(john.Adress.city);
+//for loops
+let height :number =5;
+for(let interfaces = 0; interfaces < height; interfaces++){
+    let result = '';
+    for(let j = 0; j <= interfaces; j++){
+        result += '*';
+    }
+    console.log(result);
+}
+//for in loops
+const person = {
+    name:'John',
+    age:30,
+    city:'New York'
 
-// Fetch users from an external API
-async function fetchUsers(): Promise<any[]> {
-    try {
-        const response = await fetch("https://jsonplaceholder.typicode.com/users");
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const users = await response.json();
-        return users;
-    } catch (error) {
-        console.error("Error fetching users:", error);
-        throw error;
+}
+for (const key in person) {
+    if (Object.prototype.hasOwnProperty.call(person, key)) {
+        console.log(`${key}: ${person[key as keyof typeof person]}`);
     }
 }
-
-// Display users from fetchUsers
-async function displayUsers(): Promise<void> {
-    try {
-        console.log("Fetching users...");
-        const users = await fetchUsers();
-        console.log("Users fetched successfully:", users);
-    } catch (error) {
-        console.error("Error displaying users:", error);
-    }
-}
-
-// // Example using Promise.all to run multiple async tasks
-// async function fetchMultipleData(): Promise<void> {
-//     try {
-//         console.log("Fetching data and users concurrently...");
-//         const [dataMessage, users] = await Promise.all([fetchData(), fetchUsers()]);
-//         console.log("Results from both operations:");
-//         console.log("Message:", dataMessage);
-//         console.log("Users:", users);
-//     } catch (error) {
-//         console.error("Error in concurrent fetch:", error);
-//     }
-// }
-
-// // Call the asynchronous functions
-// displayData();
- displayUsers();
-// fetchMultipleData();
+//for of loops
+const array = [1,2,3,4,5];
+for (const value of array) {
+    console.log(value);
+}   
